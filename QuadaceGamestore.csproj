@@ -1,0 +1,783 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A7ACC213-A04F-4318-B1DF-12B91980ED0E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuadaceGamestore</RootNamespace>
+    <AssemblyName>QuadaceGamestore</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44361</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker">
+      <HintPath>..\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Syncfusion.Compression.Portable, Version=20.1200.0.61, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Compression.Net.Core.20.1.0.61\lib\netstandard2.0\Syncfusion.Compression.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.HtmlConverter.Portable, Version=20.1200.0.61, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.20.1.0.61\lib\netstandard2.0\Syncfusion.HtmlConverter.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=20.1460.0.61, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Licensing.20.1.0.61\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Portable, Version=20.1200.0.61, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Pdf.Net.Core.20.1.0.61\lib\netstandard2.0\Syncfusion.Pdf.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encoding.CodePages.4.4.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\GenerateReport.aspx" />
+    <Content Include="Admin\ManageOrder.aspx" />
+    <Content Include="Admin\ManageOrderCancelled.aspx" />
+    <Content Include="Admin\ManageOrderCompleted.aspx" />
+    <Content Include="Admin\ManageOrderRent.aspx" />
+    <Content Include="Admin\ManageOrderRentCancelled.aspx" />
+    <Content Include="Admin\ManageOrderRentRenting.aspx" />
+    <Content Include="Admin\ManageOrderRentReturned.aspx" />
+    <Content Include="Admin\ManageOrderRentShipping.aspx" />
+    <Content Include="Admin\ManageOrderShipping.aspx" />
+    <Content Include="Admin\ManageOrderTrade.aspx" />
+    <Content Include="Admin\ManageOrderTradeAccepted.aspx" />
+    <Content Include="Admin\ManageOrderTradeDeclined.aspx" />
+    <Content Include="Admin\ManageProduct.aspx" />
+    <Content Include="Admin\ManageProductRent.aspx" />
+    <Content Include="Admin\ManageUser.aspx" />
+    <Content Include="Admin\OrderDetailsProductBuy.aspx" />
+    <Content Include="Admin\OrderDetailsProductBuyCompleted.aspx" />
+    <Content Include="Admin\OrderDetailsProductBuyTracking.aspx" />
+    <Content Include="Admin\OrderDetailsProductRent.aspx" />
+    <Content Include="Admin\OrderDetailsProductRentRenting.aspx" />
+    <Content Include="Admin\OrderDetailsProductRentReturned.aspx" />
+    <Content Include="Admin\OrderDetailsProductRentTracking.aspx" />
+    <Content Include="Admin\ProductBuyAdd.aspx" />
+    <Content Include="Admin\ProductRentAdd.aspx" />
+    <Content Include="Admin\Receipt.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="DeliveryMan\DeliveryCompleted.aspx" />
+    <Content Include="DeliveryMan\DeliveryCompletedDetails.aspx" />
+    <Content Include="DeliveryMan\DeliveryCompletedRentDetails.aspx" />
+    <Content Include="DeliveryMan\DeliveryShip.aspx" />
+    <Content Include="DeliveryMan\DeliveryShipDetails.aspx" />
+    <Content Include="DeliveryMan\DeliveryShipRentDetails.aspx" />
+    <Content Include="DeliveryMan\OrderDetailsProductBuyCompleted.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="SearchPage.aspx" />
+    <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\Login.css" />
+    <Content Include="Styles\sidebar.css" />
+    <Content Include="Styles\style.css" />
+    <Content Include="TermsCondition.aspx" />
+    <Content Include="User\Account.aspx" />
+    <Content Include="User\AccountEdit.aspx" />
+    <Content Include="User\Cart.aspx" />
+    <Content Include="User\CartRent.aspx" />
+    <Content Include="User\Checkout.aspx" />
+    <Content Include="User\CheckoutRent.aspx" />
+    <Content Include="User\OrderCancelled.aspx" />
+    <Content Include="User\OrderCompleted.aspx" />
+    <Content Include="User\OrderDetails.aspx" />
+    <Content Include="User\OrderDetailsCancelled.aspx" />
+    <Content Include="User\OrderDetailsCompleted.aspx" />
+    <Content Include="User\OrderRentCancelled.aspx" />
+    <Content Include="User\OrderRentDetails.aspx" />
+    <Content Include="User\OrderRentDetailsCancelled.aspx" />
+    <Content Include="User\OrderRentRenting.aspx" />
+    <Content Include="User\OrderRentReturned.aspx" />
+    <Content Include="User\OrderRentShipping.aspx" />
+    <Content Include="User\OrderRentToShip.aspx" />
+    <Content Include="User\OrderShipping.aspx" />
+    <Content Include="User\OrderToShip.aspx" />
+    <Content Include="User\OrderTradeAccepted.aspx" />
+    <Content Include="User\OrderTradeDeclined.aspx" />
+    <Content Include="User\OrderTradeRequest.aspx" />
+    <Content Include="User\Receipt.aspx" />
+    <Content Include="U_Buy\NintendoSwitchBuy.aspx" />
+    <Content Include="U_Buy\OthersBuy.aspx" />
+    <Content Include="U_Buy\PCGamingBuy.aspx" />
+    <Content Include="U_Buy\PlayStationBuy.aspx" />
+    <Content Include="U_Buy\ProductBuy.aspx" />
+    <Content Include="U_Buy\ViewDetailsProductBuy.aspx" />
+    <Content Include="U_Buy\XBoxBuy.aspx" />
+    <Content Include="U_Rent\NintendoSwitchRent.aspx" />
+    <Content Include="U_Rent\OthersRent.aspx" />
+    <Content Include="U_Rent\PCGamingRent.aspx" />
+    <Content Include="U_Rent\PlayStationRent.aspx" />
+    <Content Include="U_Rent\ProductRent.aspx" />
+    <Content Include="U_Rent\ViewDetailsProductRent.aspx" />
+    <Content Include="U_Rent\XBoxRent.aspx" />
+    <Content Include="U_Trade\Trade.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\GenerateReport.aspx.cs">
+      <DependentUpon>GenerateReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GenerateReport.aspx.designer.cs">
+      <DependentUpon>GenerateReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrder.aspx.cs">
+      <DependentUpon>ManageOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrder.aspx.designer.cs">
+      <DependentUpon>ManageOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrderCancelled.aspx.cs">
+      <DependentUpon>ManageOrderCancelled.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrderCancelled.aspx.designer.cs">
+      <DependentUpon>ManageOrderCancelled.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrderCompleted.aspx.cs">
+      <DependentUpon>ManageOrderCompleted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrderCompleted.aspx.designer.cs">
+      <DependentUpon>ManageOrderCompleted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrderRent.aspx.cs">
+      <DependentUpon>ManageOrderRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrderRent.aspx.designer.cs">
+      <DependentUpon>ManageOrderRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrderRentCancelled.aspx.cs">
+      <DependentUpon>ManageOrderRentCancelled.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrderRentCancelled.aspx.designer.cs">
+      <DependentUpon>ManageOrderRentCancelled.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrderRentRenting.aspx.cs">
+      <DependentUpon>ManageOrderRentRenting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrderRentRenting.aspx.designer.cs">
+      <DependentUpon>ManageOrderRentRenting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrderRentReturned.aspx.cs">
+      <DependentUpon>ManageOrderRentReturned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrderRentReturned.aspx.designer.cs">
+      <DependentUpon>ManageOrderRentReturned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrderRentShipping.aspx.cs">
+      <DependentUpon>ManageOrderRentShipping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrderRentShipping.aspx.designer.cs">
+      <DependentUpon>ManageOrderRentShipping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrderShipping.aspx.cs">
+      <DependentUpon>ManageOrderShipping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrderShipping.aspx.designer.cs">
+      <DependentUpon>ManageOrderShipping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrderTrade.aspx.cs">
+      <DependentUpon>ManageOrderTrade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrderTrade.aspx.designer.cs">
+      <DependentUpon>ManageOrderTrade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrderTradeAccepted.aspx.cs">
+      <DependentUpon>ManageOrderTradeAccepted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrderTradeAccepted.aspx.designer.cs">
+      <DependentUpon>ManageOrderTradeAccepted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageOrderTradeDeclined.aspx.cs">
+      <DependentUpon>ManageOrderTradeDeclined.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageOrderTradeDeclined.aspx.designer.cs">
+      <DependentUpon>ManageOrderTradeDeclined.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageProduct.aspx.cs">
+      <DependentUpon>ManageProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageProduct.aspx.designer.cs">
+      <DependentUpon>ManageProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageProductRent.aspx.cs">
+      <DependentUpon>ManageProductRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageProductRent.aspx.designer.cs">
+      <DependentUpon>ManageProductRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageUser.aspx.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageUser.aspx.designer.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductBuy.aspx.cs">
+      <DependentUpon>OrderDetailsProductBuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductBuy.aspx.designer.cs">
+      <DependentUpon>OrderDetailsProductBuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductBuyCompleted.aspx.cs">
+      <DependentUpon>OrderDetailsProductBuyCompleted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductBuyCompleted.aspx.designer.cs">
+      <DependentUpon>OrderDetailsProductBuyCompleted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductBuyTracking.aspx.cs">
+      <DependentUpon>OrderDetailsProductBuyTracking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductBuyTracking.aspx.designer.cs">
+      <DependentUpon>OrderDetailsProductBuyTracking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductRent.aspx.cs">
+      <DependentUpon>OrderDetailsProductRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductRent.aspx.designer.cs">
+      <DependentUpon>OrderDetailsProductRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductRentRenting.aspx.cs">
+      <DependentUpon>OrderDetailsProductRentRenting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductRentRenting.aspx.designer.cs">
+      <DependentUpon>OrderDetailsProductRentRenting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductRentReturned.aspx.cs">
+      <DependentUpon>OrderDetailsProductRentReturned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductRentReturned.aspx.designer.cs">
+      <DependentUpon>OrderDetailsProductRentReturned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductRentTracking.aspx.cs">
+      <DependentUpon>OrderDetailsProductRentTracking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderDetailsProductRentTracking.aspx.designer.cs">
+      <DependentUpon>OrderDetailsProductRentTracking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductBuyAdd.aspx.cs">
+      <DependentUpon>ProductBuyAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductBuyAdd.aspx.designer.cs">
+      <DependentUpon>ProductBuyAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductRentAdd.aspx.cs">
+      <DependentUpon>ProductRentAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductRentAdd.aspx.designer.cs">
+      <DependentUpon>ProductRentAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Receipt.aspx.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Receipt.aspx.designer.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Class\CartBuyClass.cs" />
+    <Compile Include="Class\CartRentClass.cs" />
+    <Compile Include="Class\DatabaseManager.cs" />
+    <Compile Include="Class\ErrorClass.cs" />
+    <Compile Include="Class\OrderBuyClass.cs" />
+    <Compile Include="Class\OrderRentClass.cs" />
+    <Compile Include="Class\ProductBuyClass.cs" />
+    <Compile Include="Class\ProductRentClass.cs" />
+    <Compile Include="Class\UserClass.cs" />
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryCompleted.aspx.cs">
+      <DependentUpon>DeliveryCompleted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryCompleted.aspx.designer.cs">
+      <DependentUpon>DeliveryCompleted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryCompletedDetails.aspx.cs">
+      <DependentUpon>DeliveryCompletedDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryCompletedDetails.aspx.designer.cs">
+      <DependentUpon>DeliveryCompletedDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryCompletedRentDetails.aspx.cs">
+      <DependentUpon>DeliveryCompletedRentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryCompletedRentDetails.aspx.designer.cs">
+      <DependentUpon>DeliveryCompletedRentDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryShip.aspx.cs">
+      <DependentUpon>DeliveryShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryShip.aspx.designer.cs">
+      <DependentUpon>DeliveryShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryShipDetails.aspx.cs">
+      <DependentUpon>DeliveryShipDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryShipDetails.aspx.designer.cs">
+      <DependentUpon>DeliveryShipDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryShipRentDetails.aspx.cs">
+      <DependentUpon>DeliveryShipRentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeliveryMan\DeliveryShipRentDetails.aspx.designer.cs">
+      <DependentUpon>DeliveryShipRentDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryMan\OrderDetailsProductBuyCompleted.aspx.cs">
+      <DependentUpon>OrderDetailsProductBuyCompleted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeliveryMan\OrderDetailsProductBuyCompleted.aspx.designer.cs">
+      <DependentUpon>OrderDetailsProductBuyCompleted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchPage.aspx.cs">
+      <DependentUpon>SearchPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchPage.aspx.designer.cs">
+      <DependentUpon>SearchPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TermsCondition.aspx.cs">
+      <DependentUpon>TermsCondition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermsCondition.aspx.designer.cs">
+      <DependentUpon>TermsCondition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\AccountEdit.aspx.cs">
+      <DependentUpon>AccountEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\AccountEdit.aspx.designer.cs">
+      <DependentUpon>AccountEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\CartRent.aspx.cs">
+      <DependentUpon>CartRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\CartRent.aspx.designer.cs">
+      <DependentUpon>CartRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\CheckoutRent.aspx.cs">
+      <DependentUpon>CheckoutRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\CheckoutRent.aspx.designer.cs">
+      <DependentUpon>CheckoutRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderCancelled.aspx.cs">
+      <DependentUpon>OrderCancelled.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderCancelled.aspx.designer.cs">
+      <DependentUpon>OrderCancelled.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderCompleted.aspx.cs">
+      <DependentUpon>OrderCompleted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderCompleted.aspx.designer.cs">
+      <DependentUpon>OrderCompleted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderDetails.aspx.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderDetails.aspx.designer.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderDetailsCancelled.aspx.cs">
+      <DependentUpon>OrderDetailsCancelled.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderDetailsCancelled.aspx.designer.cs">
+      <DependentUpon>OrderDetailsCancelled.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderDetailsCompleted.aspx.cs">
+      <DependentUpon>OrderDetailsCompleted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderDetailsCompleted.aspx.designer.cs">
+      <DependentUpon>OrderDetailsCompleted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderRentCancelled.aspx.cs">
+      <DependentUpon>OrderRentCancelled.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderRentCancelled.aspx.designer.cs">
+      <DependentUpon>OrderRentCancelled.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderRentDetails.aspx.cs">
+      <DependentUpon>OrderRentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderRentDetails.aspx.designer.cs">
+      <DependentUpon>OrderRentDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderRentDetailsCancelled.aspx.cs">
+      <DependentUpon>OrderRentDetailsCancelled.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderRentDetailsCancelled.aspx.designer.cs">
+      <DependentUpon>OrderRentDetailsCancelled.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderRentRenting.aspx.cs">
+      <DependentUpon>OrderRentRenting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderRentRenting.aspx.designer.cs">
+      <DependentUpon>OrderRentRenting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderRentReturned.aspx.cs">
+      <DependentUpon>OrderRentReturned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderRentReturned.aspx.designer.cs">
+      <DependentUpon>OrderRentReturned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderRentShipping.aspx.cs">
+      <DependentUpon>OrderRentShipping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderRentShipping.aspx.designer.cs">
+      <DependentUpon>OrderRentShipping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderRentToShip.aspx.cs">
+      <DependentUpon>OrderRentToShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderRentToShip.aspx.designer.cs">
+      <DependentUpon>OrderRentToShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderShipping.aspx.cs">
+      <DependentUpon>OrderShipping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderShipping.aspx.designer.cs">
+      <DependentUpon>OrderShipping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderToShip.aspx.cs">
+      <DependentUpon>OrderToShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderToShip.aspx.designer.cs">
+      <DependentUpon>OrderToShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderTradeAccepted.aspx.cs">
+      <DependentUpon>OrderTradeAccepted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderTradeAccepted.aspx.designer.cs">
+      <DependentUpon>OrderTradeAccepted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderTradeDeclined.aspx.cs">
+      <DependentUpon>OrderTradeDeclined.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderTradeDeclined.aspx.designer.cs">
+      <DependentUpon>OrderTradeDeclined.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderTradeRequest.aspx.cs">
+      <DependentUpon>OrderTradeRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderTradeRequest.aspx.designer.cs">
+      <DependentUpon>OrderTradeRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Receipt.aspx.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Receipt.aspx.designer.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Buy\NintendoSwitchBuy.aspx.cs">
+      <DependentUpon>NintendoSwitchBuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Buy\NintendoSwitchBuy.aspx.designer.cs">
+      <DependentUpon>NintendoSwitchBuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Buy\OthersBuy.aspx.cs">
+      <DependentUpon>OthersBuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Buy\OthersBuy.aspx.designer.cs">
+      <DependentUpon>OthersBuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Buy\PCGamingBuy.aspx.cs">
+      <DependentUpon>PCGamingBuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Buy\PCGamingBuy.aspx.designer.cs">
+      <DependentUpon>PCGamingBuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Buy\PlayStationBuy.aspx.cs">
+      <DependentUpon>PlayStationBuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Buy\PlayStationBuy.aspx.designer.cs">
+      <DependentUpon>PlayStationBuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Buy\ProductBuy.aspx.cs">
+      <DependentUpon>ProductBuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Buy\ProductBuy.aspx.designer.cs">
+      <DependentUpon>ProductBuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Buy\ViewDetailsProductBuy.aspx.cs">
+      <DependentUpon>ViewDetailsProductBuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Buy\ViewDetailsProductBuy.aspx.designer.cs">
+      <DependentUpon>ViewDetailsProductBuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Buy\XBoxBuy.aspx.cs">
+      <DependentUpon>XBoxBuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Buy\XBoxBuy.aspx.designer.cs">
+      <DependentUpon>XBoxBuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Rent\NintendoSwitchRent.aspx.cs">
+      <DependentUpon>NintendoSwitchRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Rent\NintendoSwitchRent.aspx.designer.cs">
+      <DependentUpon>NintendoSwitchRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Rent\OthersRent.aspx.cs">
+      <DependentUpon>OthersRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Rent\OthersRent.aspx.designer.cs">
+      <DependentUpon>OthersRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Rent\PCGamingRent.aspx.cs">
+      <DependentUpon>PCGamingRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Rent\PCGamingRent.aspx.designer.cs">
+      <DependentUpon>PCGamingRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Rent\PlayStationRent.aspx.cs">
+      <DependentUpon>PlayStationRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Rent\PlayStationRent.aspx.designer.cs">
+      <DependentUpon>PlayStationRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Rent\ProductRent.aspx.cs">
+      <DependentUpon>ProductRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Rent\ProductRent.aspx.designer.cs">
+      <DependentUpon>ProductRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Rent\ViewDetailsProductRent.aspx.cs">
+      <DependentUpon>ViewDetailsProductRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Rent\ViewDetailsProductRent.aspx.designer.cs">
+      <DependentUpon>ViewDetailsProductRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Rent\XBoxRent.aspx.cs">
+      <DependentUpon>XBoxRent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Rent\XBoxRent.aspx.designer.cs">
+      <DependentUpon>XBoxRent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Trade\Trade.aspx.cs">
+      <DependentUpon>Trade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Trade\Trade.aspx.designer.cs">
+      <DependentUpon>Trade.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPages\MasterPage.Master" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2166</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44361/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets'))" />
+    <Error Condition="!Exists('packages\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.20.1.0.61\build\netstandard20\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.20.1.0.61\build\netstandard20\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.targets'))" />
+  </Target>
+  <Import Project="packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="packages\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.20.1.0.61\build\netstandard20\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.targets" Condition="Exists('packages\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.20.1.0.61\build\netstandard20\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
